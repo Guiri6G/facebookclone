@@ -9,15 +9,16 @@ import { Route,
 
 import Login from '../screens/login'
 import Home from '../screens/home'
-import Signin from '../components/signin'
+import PrivateRoute from '../utils/privateRoute'
+import HeaderLogout from '../components/headerLogout';
 
 const Routes = () => {
     return(
         <Router>
+            <HeaderLogout></HeaderLogout>
             <Switch>
-                <Route exact path="/" component={Signin} />
-                <Route exact path="/login" component={Login} />
-                <Route path="/home" component={Home} />
+                <Route exact path="/" component={Login} />
+                <PrivateRoute path="/home" component={Home} />
                 <Redirect to='/'> </Redirect>
             </Switch>
         </Router>
