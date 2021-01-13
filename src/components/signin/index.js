@@ -18,7 +18,7 @@ const Signin = ({submit}) => {
                 <SigninInput placeholder='Username'
                     onChange={e => setFormState({ ...formState, username: e.target.value})}
                     type='text'></SigninInput>
-                <SigninInput placeholder='password'
+                <SigninInput placeholder='Password'
                     onChange={e => setFormState({ ...formState, password: e.target.value})}
                     type='password'></SigninInput>
             {/* <button onClick={() => props.history.push('/home')}> home </button> */}

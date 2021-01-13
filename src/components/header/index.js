@@ -6,7 +6,7 @@ import styled from 'styled-components';
 const Header = props => {
     return (
         <div>
-            <HeaderContainer backgroundColor={props.backgroundColor}>
+            <HeaderContainer>
             <p>header</p>
             </HeaderContainer>
         </div>
@@ -14,7 +14,7 @@ const Header = props => {
 };
 
 const HeaderContainer =  styled.div`
-    background-color: ${props => props.backgroundColor };
+    background-color: #2078f4;
     `
 
 export default Header;

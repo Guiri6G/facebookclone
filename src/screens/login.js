@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
-import Header from '../components/header'
 import Signin from '../components/signin'
 
 
@@ -40,7 +39,6 @@ const Login = ({history}) => {
     },[])
     return (
         <div>
-         <Header backgroundColor='green'></Header>
          <Signin submit={submit}> </Signin>
         </div>
     )
