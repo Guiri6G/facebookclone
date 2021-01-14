@@ -70,13 +70,6 @@ const ButtonPage = () => {
       </Fragment>
     );
   }
-  
-
-const SubmitInput = styled.input`
-    margin: 6px 0px;
-    border-radius: 12px;
-    height:30px;
-`
 
 const StyledBox = styled.div`
     padding:20px;
