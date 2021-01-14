@@ -10,14 +10,17 @@ const HeaderLogout = () => {
   const handleLogout = () => {
     localStorage.removeItem('token')
     history.push('/')
+    window.location.reload(); 
   }
 
   return (
     <Container>
-        <UserImage/>
-        <StyledSpan>FACEBOOK</StyledSpan>
+        <LogoFacebook />
+        <StyledSpan>Facebook</StyledSpan>
       {isToken ? (
-        <LogoutButton onClick={handleLogout}>Logout</LogoutButton>
+        
+        <LogoutButton onClick={handleLogout}>se deconnecter</LogoutButton>
+        
       ) : (
         null
       )}
@@ -33,12 +36,12 @@ const Container = styled.div`
   background-color: #1877f2;
   display: flex;
   justify-content: space-between;
-  height: 70px;
+  height: 60px;
 `
-const UserImage = styled.div`
+const LogoFacebook = styled.div`
   background-image: url(${myImage});
-  width:85px;
-  height:85px;
+  width:75px;
+  height:75px;
   max-width:100%;
   max-height:100%;
   align-items: left;
@@ -49,7 +52,7 @@ const StyledSpan = styled.span `
     color: black;
     display: inline-flex;
     align-items: center;
-    letter-spacing: .2rem;
+    letter-spacing: 0.2rem;
     font-weight: bold;
 `
 

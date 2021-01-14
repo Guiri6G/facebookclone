@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import axios from 'axios'
+import Header from '../components/header'
 import styled from 'styled-components'
 import Signin from '../components/signin'
 
@@ -19,8 +20,10 @@ const submit = (e, formState, setErrorMessage, history) =>{
        } 
     })
     .then(res => {
+        localStorage.setItem('username', formState.username)
         localStorage.setItem('token', res.headers['x-access-token'])
         history.push('/home')
+        window.location.reload(); 
     }).catch(err => {
         setErrorMessage('Une erreur est survenue')
         console.log(err)

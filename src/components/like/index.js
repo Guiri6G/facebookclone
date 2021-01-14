@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import 'font-awesome/css/font-awesome.min.css';
 import styled from 'styled-components'
 
 const Like = () => {
@@ -12,8 +13,8 @@ const Like = () => {
     return (
         <div>
             {toggle?
-            <StyledBlueSpan onClick={toggler} className="fas fa-thumbs-up"> +1 like </StyledBlueSpan>
-            :<StyledBlackSpan></StyledBlackSpan> }
+            <StyledBlueSpan onClick={toggler} className="fa fa-thumbs-up" > +1 like </StyledBlueSpan>
+            :<StyledBlackSpan onClick={toggler} className="fa fa-thumbs-up"></StyledBlackSpan> }
         </div>
     );
 };

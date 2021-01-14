@@ -7,7 +7,7 @@ const Home = props => {
     const username = localStorage.getItem('username')
     return (
         <StyledContainer>
-            <h2>Welcome {username} !</h2>
+            <h2>Bonjour {username} !</h2>
             <MakePost></MakePost>
         </StyledContainer>
         
@@ -19,6 +19,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 flex-direction: column;
+margin-top: 50px;
 `
 
 export default Home;

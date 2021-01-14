@@ -1,8 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, Fragment } from 'react'
 import { nanoid } from 'nanoid'
 import styled from 'styled-components'
 import Like from '../like';
 import 'font-awesome/css/font-awesome.min.css';
+import { MDBInput } from 'mdbreact';
+import { MDBBtn } from "mdbreact";
+
 
     const username = localStorage.getItem('username');
 
@@ -28,17 +31,17 @@ import 'font-awesome/css/font-awesome.min.css';
             <StyledTextarea placeholder={"Que voulez-vous dire "+username+" ?"}
                 onChange={(e) => setInputValue(e.target.value) } 
                 type="text"></StyledTextarea>
-                <SubmitButton type='submit'> Publier </SubmitButton>
+                <ButtonPage></ButtonPage>
             </StyledForm>
 
             {post.map(postD =>
                 <StyledBox>
-                    <h3>{username} </h3>
-                    <StyledP key={postD.id}>{postD.content}</StyledP>
-            <StyledAd>
-                <StyledSpanTrash className="fa fa-trash" onClick={() => DeletePost(postD.id)}></StyledSpanTrash> 
+                    <h3>{username} a poster : </h3>
+                    <StyledPost key={postD.id}>{postD.content}</StyledPost>
+            <StyledOption>
+                <StyledDeleteIcon className="fa fa-trash" onClick={() => DeletePost(postD.id)}></StyledDeleteIcon> 
                 <Like></Like>
-            </StyledAd>
+            </StyledOption>
                 </StyledBox>
                 )}
         </div>
@@ -52,26 +55,24 @@ const StyledForm = styled.form`
     justify-content: center;
 `
 const StyledTextarea = styled.textarea`
-  width: 470px;
-  max-width: 470px;
-  height: 110px;
-  max-height: 110px;
-  padding: 15px;
-  float:left;
-  
-  background: transparent;
-  outline: none;
-  
-  color: #726659;
-  font-family: 'Lato', sans-serif;
-  font-size: 0.875em;
-  
-  border: solid 1px #b3aca7;
-  
-  transition: all 0.3s ease-in-out;
+float: left;
+width: 100%;
+min-height: 75px;
+border: 1px solid grey;
+color: #000000;
 `
+const ButtonPage = () => {
+    return (
+      <Fragment>
+        <MDBBtn
+        type="submit"
+         outline color="primary">Publier</MDBBtn>
+      </Fragment>
+    );
+  }
+  
 
-const SubmitButton = styled.button`
+const SubmitInput = styled.input`
     margin: 6px 0px;
     border-radius: 12px;
     height:30px;
@@ -85,17 +86,17 @@ const StyledBox = styled.div`
     border-radius: 0px 10px 10px 10px;
 `
 
-const StyledSpanTrash = styled.span`
+const StyledDeleteIcon = styled.span`
     cursor: pointer;
     user-select: none;
 `
 
-const StyledP = styled.p`
+const StyledPost = styled.p`
     font-size: 14px;
     font-family: arial;
 `
 
-const StyledAd = styled.div`
+const StyledOption = styled.div`
     display: flex ;
     justify-content: space-between;
     margin-bottom: 12px;
