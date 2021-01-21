@@ -2,7 +2,6 @@ import React, {useState, useEffect, Fragment} from 'react'
 import styled from 'styled-components'
 import axio from 'axios'
 import {useHistory} from 'react-router-dom'
-import { MDBBtn } from "mdbreact";
 
 const Signin = ({submit}) => {
     const [formState, setFormState] = useState({username: '', password: ''})
@@ -24,7 +23,7 @@ const Signin = ({submit}) => {
                     type='password'></SigninInput>
             {/* <button onClick={() => props.history.push('/home')}> home </button> */}
             <StyledSpan>{errorMessage}</StyledSpan>
-            <ButtonPage type='submit'></ButtonPage>
+            <SigninInput type='submit'></SigninInput>
             </StyledForm>
     )
 }
@@ -38,15 +37,15 @@ const StyledSpan = styled.span `
    
 `
 
-const ButtonPage = () => {
-    return (
-      <Fragment>
-        <MDBBtn
-        type="submit"
-         outline color="primary">Connexion</MDBBtn>
-      </Fragment>
-    );
-  }
+const SigninInput = styled.input`
+  border-radius: 12px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 25px;
+  margin: 4px 2px;
+  cursor: pointer;
+`
 
 const StyledForm = styled.form`
     display: flex;

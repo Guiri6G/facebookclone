@@ -1,13 +1,14 @@
 import React from 'react';
-import '@fortawesome/fontawesome-free/css/all.min.css'; 
-import 'bootstrap-css-only/css/bootstrap.min.css'; 
-import 'mdbreact/dist/css/mdb.css';
+import {Provider} from 'react-redux'
 import './App.css';
+import {store} from './config/store'
 import Routes from './config/router'
 
 function App() {
   return (
+    <Provider store={store}>
     <Routes></Routes>
+    </Provider>
   );
 }
 

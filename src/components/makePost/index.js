@@ -3,7 +3,6 @@ import { nanoid } from 'nanoid'
 import styled from 'styled-components'
 import Like from '../like';
 import 'font-awesome/css/font-awesome.min.css';
-import { MDBInput } from 'mdbreact';
 import { MDBBtn } from "mdbreact";
 
 
@@ -31,7 +30,7 @@ import { MDBBtn } from "mdbreact";
             <StyledTextarea placeholder={"Que voulez-vous dire "+username+" ?"}
                 onChange={(e) => setInputValue(e.target.value) } 
                 type="text"></StyledTextarea>
-                <ButtonPage></ButtonPage>
+               <SigninInput type='submit'></SigninInput>
             </StyledForm>
 
             {post.map(postD =>
@@ -61,15 +60,15 @@ min-height: 75px;
 border: 1px solid grey;
 color: #000000;
 `
-const ButtonPage = () => {
-    return (
-      <Fragment>
-        <MDBBtn
-        type="submit"
-         outline color="primary">Publier</MDBBtn>
-      </Fragment>
-    );
-  }
+const SigninInput = styled.input`
+  border-radius: 12px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 25px;
+  margin: 4px 2px;
+  cursor: pointer;
+`
 
 const StyledBox = styled.div`
     padding:20px;
