@@ -23,7 +23,7 @@ const Signin = ({submit}) => {
                     type='password'></SigninInput>
             {/* <button onClick={() => props.history.push('/home')}> home </button> */}
             <StyledSpan>{errorMessage}</StyledSpan>
-            <SigninInput type='submit'></SigninInput>
+            <SigninInputBtn type='submit'></SigninInputBtn>
             </StyledForm>
     )
 }
@@ -37,7 +37,7 @@ const StyledSpan = styled.span `
    
 `
 
-const SigninInput = styled.input`
+const SigninInputBtn = styled.input`
   border-radius: 12px;
   background-color: #4CAF50;
   border: none;
@@ -53,5 +53,11 @@ const StyledForm = styled.form`
     align-items: center;
     justify-content: center;
     margin-top:12px;
+`
+
+const SigninInput = styled.input`
+    margin: 6px 0px;
+    border-radius: 12px;
+    height:30px;
 `
 export default Signin;
