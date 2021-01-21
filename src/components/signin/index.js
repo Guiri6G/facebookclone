@@ -54,10 +54,4 @@ const StyledForm = styled.form`
     justify-content: center;
     margin-top:12px;
 `
-
-const SigninInput = styled.input`
-    margin: 6px 0px;
-    border-radius: 12px;
-    height:30px;
-`
 export default Signin;
